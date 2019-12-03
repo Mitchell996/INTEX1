@@ -12,8 +12,16 @@ namespace INTEX.Models
     {
         [Key]
         public int ORDERTESTID { get; set; }
+
+        [Required(ErrorMessage = "Please select the Employee assigned to the test from the dropdown list")]
+        [Display(Name = "Employee Assigned")]
         public int EMPLOYEEID { get; set; }
+
+        [Required(ErrorMessage = "Please select the Test Type from the dropdown list")]
+        [Display(Name = "Test Performed")]
         public int TESTID { get; set; }
+
+        [Display(Name = "Order Number")]
         public int ORDERID { get; set; }
 
 

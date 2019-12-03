@@ -12,8 +12,17 @@ namespace INTEX.Models
     {
         [Key]
         public int EMPLOYEEID { get; set; }
+
+        [Required(ErrorMessage = "Please the Employee First Name")]
+        [Display(Name = "First Name")]
         public string EMPFIRSTNAME { get; set; }
+
+        [Required(ErrorMessage = "Please the Employee Last Name")]
+        [Display(Name = "Last Name")]
         public string EMPLASTNAME { get; set; }
+
+        [Required(ErrorMessage = "Please the Employee Hourly Wage")]
+        [Display(Name = "Hourly Wage")]
         public int HOURLYWAGE { get; set; }
 
     }

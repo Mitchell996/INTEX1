@@ -11,13 +11,34 @@ namespace INTEX.Models
     public class Customer
     {
         [Key]
+        [Required]
         private int CustomerID;
+        [Required(ErrorMessage = "Please enter your Company name")]
+        [Display(Name="Company Name")]
         public String CustName;
+
+        [Required(ErrorMessage = "Please enter your Street Address")]
+        [Display(Name = "Street Address")]
         public String Address;
+        [Required(ErrorMessage = "Please enter your city")]
+        [Display(Name = "City")]
         public String CustCity { get; set; }
+
+        [Required(ErrorMessage = "Please enter your State")]
+        [Display(Name = "State Abbreviation (i.e. AZ)")]
         public String CustState { get; set; }
+
+        [Required(ErrorMessage = "Please enter the email for your company contact")]
+        [Email(ErrorMessage="Please enter a valid Email Address")]
+        [Display(Name = "Contact Email")]
         public String CustEmail { get; set; }
-        public String CUSTPHONE { get; set; }
+
+        [Required(ErrorMessage = "Please enter your Company Phone")]
+        [Display(Name = "Company Name")]
+        public String CustPhone { get; set; }
+
+        [Required(ErrorMessage = "Please enter your Company Routing Number")]
+        [Display(Name = "Routing Number")]
         public string CustRouting { get; set; }
     }
 }
