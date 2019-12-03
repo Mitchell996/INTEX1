@@ -11,9 +11,16 @@ namespace INTEX.Models
     public class TestMaterials
     {
         [Key]
+        [Display(Name = "Test Material ID")]
         public int TESTMATERIALID { get; set; }
+        [Required]
+        [Display(Name = "Material ID")]
         public int MATERIALID { get; set; }
+        [Required]
+        [Display(Name = "Test ID")]
         public int TESTID { get; set; }
+        [Required]
+        [Display(Name = "Quantity Needed")]
         public double QUANTITYNEEDED { get; set; }
     }
 }

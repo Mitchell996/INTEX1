@@ -11,12 +11,24 @@ namespace INTEX.Models
     public class Test
     {
         [Key]
+        [Display(Name = "Test ID")]
         public int TESTID { get; set; }
+        [Required]
+        [Display(Name = "Employee ID")]
         public int EMPLOYEEID { get; set; }
+        [Required]
+        [Display(Name = "Hours To Complete")]
         public int HOURSTOCOMPLETE { get; set; }
+        [Required]
+        [Display(Name = "Base Price")]
         public double BASEPRICE { get; set; }
+        [Required]
+        [Display(Name = "Number Of Days")]
         public int NUMBEROFDAYS { get; set; }
+        [Required]
+        [Display(Name = "Test Description")]
         public string TESTDESCRIPTION { get; set; }
+        [Required]
         public int PROGRESS { get; set; }//-1 if not started, 0 if in progress, 1 if completed
         public int? TESTCONDITIONAL { get; set; }//ID to what the conditional test might be.
 
