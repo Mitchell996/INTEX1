@@ -13,15 +13,19 @@ namespace INTEX.Models
         [Key]
         [Display(Name = "Test Material ID")]
         public int TESTMATERIALID { get; set; }
+
         [Required]
+        [Stringlength(6,minimumLength= 6)]
         [Display(Name = "Compound LT ID")]
         public int COMPOUNDLTID { get; set; }
         [Required]
         [Display(Name = "Compound Sequence Code")]
         public int COMPOUNDSEQCODE { get; set; }
+
         [Required]
         [Display(Name = "Concentration")]
         public double CONCENTRATION { get; set; }
+
         [Required]
         [Display(Name = "Assay ID")]
         public int ASSAYID { get; set; }
