@@ -13,7 +13,7 @@ namespace INTEX.Models
         [Key]
         public int MATERIALID { get; set; }
         public string MATDESC { get; set; }
-        public Double QUANTITYAVAILABLE { get; set; }//set a reminder to replace this when below 100mg or something
+        public double QUANTITYAVAILABLE { get; set; }//set a reminder to replace this when below 100mg or something
         public int REUSABLE { get; set; }//like do we need to replace the substance?  
         public double COST { get; set; }//cost per mg
     }
