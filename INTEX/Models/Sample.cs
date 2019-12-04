@@ -22,6 +22,8 @@ namespace INTEX.Models
         [Required]
         [Display(Name = "Recieved By")]
         public int RECEIVEDBY { get; set; }//Hold's employeeID
+        [ForeignKey("RECEIVEDBY")]
+        public virtual Employee Employee { get; set; }
         [Required]
         [Display(Name = "Compound Name")]
         public string COMPOUNDNAME { get; set; }

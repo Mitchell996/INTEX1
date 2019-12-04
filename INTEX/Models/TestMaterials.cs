@@ -16,9 +16,13 @@ namespace INTEX.Models
         [Required]
         [Display(Name = "Material ID")]
         public int MATERIALID { get; set; }
+        [ForeignKey("MATERIALID")]
+        public virtual Materials Materials { get; set; }
         [Required]
         [Display(Name = "Test ID")]
         public int TESTID { get; set; }
+        [ForeignKey("TESTID")]
+        public virtual Test Test { get; set; }
         [Required]
         [Display(Name = "Quantity Needed")]
         public double QUANTITYNEEDED { get; set; }

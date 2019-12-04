@@ -25,5 +25,7 @@ namespace INTEX.Models
         [Required(ErrorMessage = "Please select the type of test performed")]
         [Display(Name = "Test Type")]
         public int TESTID { get; set; }
+        [ForeignKey("TESTID")]
+        public virtual Test Test { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<INTEX.Models.ORDER>
+﻿@model IEnumerable<INTEX.Models.Order>
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CUSTOMERID)
+            @Html.DisplayNameFor(model => model.Customer.CustCity)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ORDERCOMMENTS)
@@ -26,7 +26,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.CUSTOMERID)
+            @Html.DisplayFor(modelItem => item.Customer.CustCity)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ORDERCOMMENTS)

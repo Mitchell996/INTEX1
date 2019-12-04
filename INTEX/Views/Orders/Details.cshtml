@@ -1,4 +1,4 @@
-﻿@model INTEX.Models.ORDER
+﻿@model INTEX.Models.Order
 
 @{
     ViewBag.Title = "Details";
@@ -7,15 +7,15 @@
 <h2>Details</h2>
 
 <div>
-    <h4>ORDER</h4>
+    <h4>Order</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.CUSTOMERID)
+            @Html.DisplayNameFor(model => model.Customer.CustCity)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CUSTOMERID)
+            @Html.DisplayFor(model => model.Customer.CustCity)
         </dd>
 
         <dt>
