@@ -1,4 +1,4 @@
-﻿@model INTEX.Models.TestMeasurement
+﻿@model INTEX.Models.Materials
 
 @{
     ViewBag.Title = "Delete";
@@ -8,31 +8,39 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>TestMeasurement</h4>
+    <h4>Materials</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Sample.COMPOUNDNAME)
+            @Html.DisplayNameFor(model => model.MATDESC)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Sample.COMPOUNDNAME)
+            @Html.DisplayFor(model => model.MATDESC)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CONCENTRATION)
+            @Html.DisplayNameFor(model => model.QUANTITYAVAILABLE)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CONCENTRATION)
+            @Html.DisplayFor(model => model.QUANTITYAVAILABLE)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ASSAYID)
+            @Html.DisplayNameFor(model => model.REUSABLE)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ASSAYID)
+            @Html.DisplayFor(model => model.REUSABLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COST)
         </dd>
 
     </dl>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<INTEX.Models.Materials>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MATDESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QUANTITYAVAILABLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REUSABLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COST)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MATDESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QUANTITYAVAILABLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REUSABLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COST)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MATERIALID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MATERIALID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MATERIALID })
+        </td>
+    </tr>
+}
+
+</table>

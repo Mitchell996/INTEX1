@@ -18,7 +18,8 @@ namespace INTEX.Controllers
         // GET: TestMeasurements
         public ActionResult Index()
         {
-            return View(db.TestMeasurement.ToList());
+            var testMeasurement = db.TestMeasurement.Include(t => t.Sample);
+            return View(testMeasurement.ToList());
         }
 
         // GET: TestMeasurements/Details/5
@@ -39,6 +40,7 @@ namespace INTEX.Controllers
         // GET: TestMeasurements/Create
         public ActionResult Create()
         {
+            ViewBag.COMPOUNDLTID = new SelectList(db.Sample, "COMPOUNDLTID", "COMPOUNDNAME");
             return View();
         }
 
@@ -56,6 +58,7 @@ namespace INTEX.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.COMPOUNDLTID = new SelectList(db.Sample, "COMPOUNDLTID", "COMPOUNDNAME", testMeasurement.COMPOUNDLTID);
             return View(testMeasurement);
         }
 
@@ -71,6 +74,7 @@ namespace INTEX.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.COMPOUNDLTID = new SelectList(db.Sample, "COMPOUNDLTID", "COMPOUNDNAME", testMeasurement.COMPOUNDLTID);
             return View(testMeasurement);
         }
 
@@ -87,6 +91,7 @@ namespace INTEX.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.COMPOUNDLTID = new SelectList(db.Sample, "COMPOUNDLTID", "COMPOUNDNAME", testMeasurement.COMPOUNDLTID);
             return View(testMeasurement);
         }
 

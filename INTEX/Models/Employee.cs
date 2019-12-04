@@ -11,6 +11,7 @@ namespace INTEX.Models
     public class Employee
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EMPLOYEEID { get; set; }
 
         [Required(ErrorMessage = "Please the Employee First Name")]

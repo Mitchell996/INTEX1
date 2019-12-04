@@ -1,0 +1,49 @@
+﻿@model INTEX.Models.Sample
+
+@{
+    ViewBag.Title = "ImportFromCSV";
+}
+
+<h2>ImportFromCSV</h2>
+
+
+@using (Html.BeginForm("ImportFromCSV", "Samples", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+<div>
+    @Html.TextBox("file", "", new { type = "file" }) <br />
+
+    <input type="submit" value="Upload" />
+    
+
+    @ViewBag.Message
+
+</div>
+
+    <script type="text/javascript">
+
+
+        $(function () {
+
+            $("a.sbmt").click(function (e) {
+
+                e.preventDefault();  // prevent default form submit behaviour since we are doing ajax
+                var _f = $(this).closest("form");
+
+                $.post(_f.attr("action"), _f.serialize(), function (res) {
+                    //do something with the response coming back from your Save action method.
+                    if (res.status === "success") {
+                        alert("Saved");
+                        // If you want to reload the page, you can do this
+                        window.location.href = window.location.href;
+
+                    }
+                });
+
+            });
+
+        });
+    </script>
+
+
+}

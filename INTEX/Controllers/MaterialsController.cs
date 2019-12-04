@@ -11,116 +11,107 @@ using INTEX.Models;
 
 namespace INTEX.Controllers
 {
-    public class TestsController : Controller
+    public class MaterialsController : Controller
     {
         private INTEXContext db = new INTEXContext();
 
-        // GET: Tests
+        // GET: Materials
         public ActionResult Index()
         {
-            var test = db.Test.Include(t => t.Employee).Include(t => t.Tes);
-            return View(test.ToList());
+            return View(db.Material.ToList());
         }
 
-        // GET: Tests/Details/5
+        // GET: Materials/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Test test = db.Test.Find(id);
-            if (test == null)
+            Materials materials = db.Material.Find(id);
+            if (materials == null)
             {
                 return HttpNotFound();
             }
-            return View(test);
+            return View(materials);
         }
 
-        // GET: Tests/Create
+        // GET: Materials/Create
         public ActionResult Create()
         {
-            ViewBag.EMPLOYEEID = new SelectList(db.Employee, "EMPLOYEEID", "EMPFIRSTNAME");
-            ViewBag.TESTCONDITIONAL = new SelectList(db.Test, "TESTID", "TESTDESCRIPTION");
             return View();
         }
 
-        // POST: Tests/Create
+        // POST: Materials/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TESTID,EMPLOYEEID,HOURSTOCOMPLETE,BASEPRICE,NUMBEROFDAYS,TESTDESCRIPTION,PROGRESS,TESTCONDITIONAL")] Test test)
+        public ActionResult Create([Bind(Include = "MATERIALID,MATDESC,QUANTITYAVAILABLE,REUSABLE,COST")] Materials materials)
         {
             if (ModelState.IsValid)
             {
-                db.Test.Add(test);
+                db.Material.Add(materials);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.EMPLOYEEID = new SelectList(db.Employee, "EMPLOYEEID", "EMPFIRSTNAME", test.EMPLOYEEID);
-            ViewBag.TESTCONDITIONAL = new SelectList(db.Test, "TESTID", "TESTDESCRIPTION", test.TESTCONDITIONAL);
-            return View(test);
+            return View(materials);
         }
 
-        // GET: Tests/Edit/5
+        // GET: Materials/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Test test = db.Test.Find(id);
-            if (test == null)
+            Materials materials = db.Material.Find(id);
+            if (materials == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.EMPLOYEEID = new SelectList(db.Employee, "EMPLOYEEID", "EMPFIRSTNAME", test.EMPLOYEEID);
-            ViewBag.TESTCONDITIONAL = new SelectList(db.Test, "TESTID", "TESTDESCRIPTION", test.TESTCONDITIONAL);
-            return View(test);
+            return View(materials);
         }
 
-        // POST: Tests/Edit/5
+        // POST: Materials/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TESTID,EMPLOYEEID,HOURSTOCOMPLETE,BASEPRICE,NUMBEROFDAYS,TESTDESCRIPTION,PROGRESS,TESTCONDITIONAL")] Test test)
+        public ActionResult Edit([Bind(Include = "MATERIALID,MATDESC,QUANTITYAVAILABLE,REUSABLE,COST")] Materials materials)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(test).State = EntityState.Modified;
+                db.Entry(materials).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.EMPLOYEEID = new SelectList(db.Employee, "EMPLOYEEID", "EMPFIRSTNAME", test.EMPLOYEEID);
-            ViewBag.TESTCONDITIONAL = new SelectList(db.Test, "TESTID", "TESTDESCRIPTION", test.TESTCONDITIONAL);
-            return View(test);
+            return View(materials);
         }
 
-        // GET: Tests/Delete/5
+        // GET: Materials/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Test test = db.Test.Find(id);
-            if (test == null)
+            Materials materials = db.Material.Find(id);
+            if (materials == null)
             {
                 return HttpNotFound();
             }
-            return View(test);
+            return View(materials);
         }
 
-        // POST: Tests/Delete/5
+        // POST: Materials/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Test test = db.Test.Find(id);
-            db.Test.Remove(test);
+            Materials materials = db.Material.Find(id);
+            db.Material.Remove(materials);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

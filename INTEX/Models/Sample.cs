@@ -12,13 +12,16 @@ namespace INTEX.Models
     {
         [Key, Column(Order = 0)]
         [Display(Name = "Compound LT ID")]
-        public int COMPOUNDLTID { get; set; }
+        [StringLength(6, MinimumLength = 6)]
+        public string COMPOUNDLTID { get; set; }
         [Key, Column(Order = 1)]
         [Display(Name = "Compound Sequence Code")]
         public int COMPOUNDSEQCODE { get; set; }
         [Required]
         [Display(Name = "Order ID")]
         public int ORDERID { get; set; }
+        [ForeignKey("ORDERID")]
+        public virtual Order Order { get; set; }
         [Required]
         [Display(Name = "Recieved By")]
         public int RECEIVEDBY { get; set; }//Hold's employeeID
@@ -29,7 +32,7 @@ namespace INTEX.Models
         public string COMPOUNDNAME { get; set; }
         [Required]
         [Display(Name = "Quantity")]
-        public double QUANTITY { get; set; }
+        public decimal QUANTITY { get; set; }
         [Required]
         [Display(Name = "Date Arrived")]
         public DateTime DATEARRIVED { get; set; }
@@ -41,16 +44,16 @@ namespace INTEX.Models
         public string APPEARANCE { get; set; }
         [Required]
         [Display(Name = "Client Weight")]
-        public double CLIENTWEIGHT { get; set; }
+        public decimal CLIENTWEIGHT { get; set; }
         [Required]
         [Display(Name = "Molar Mass")]
-        public double MOLARMASS { get; set; }
+        public decimal MOLARMASS { get; set; }
         [Required]
         [Display(Name = "Actual Weight")]
-        public double ACTUALWEIGHT { get; set; }
+        public decimal ACTUALWEIGHT { get; set; }
         [Required]
         [Display(Name = "MTD")]
-        public double MTD { get; set; }
+        public decimal MTD { get; set; }
 
 
     }

@@ -12,10 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.COMPOUNDLTID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.COMPOUNDSEQCODE)
+            @Html.DisplayNameFor(model => model.Sample.COMPOUNDNAME)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CONCENTRATION)
@@ -29,10 +26,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.COMPOUNDLTID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMPOUNDSEQCODE)
+            @Html.DisplayFor(modelItem => item.Sample.COMPOUNDNAME)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CONCENTRATION)

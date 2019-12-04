@@ -16,13 +16,12 @@ namespace INTEX.Models
 
         [Required]
         [Display(Name = "Compound LT ID")]
-        [ForeignKey("SAMPLE"), Column(Order = 1)]
-        public int COMPOUNDLTID { get; set; }
+        [StringLength(6, MinimumLength = 6)]
+        public string COMPOUNDLTID { get; set; }
         [Required]
         [Display(Name = "Compound Sequence Code")]
-        [ForeignKey("SAMPLE"), Column(Order = 1)]
         public int COMPOUNDSEQCODE { get; set; }
-
+        [ForeignKey("COMPOUNDLTID,COMPOUNDSEQCODE")]
         public virtual Sample Sample { get; set; }
 
         [Required]
