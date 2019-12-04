@@ -1,0 +1,45 @@
+﻿@model IEnumerable<INTEX.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EMPFIRSTNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMPLASTNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HOURLYWAGE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMPFIRSTNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMPLASTNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOURLYWAGE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EMPLOYEEID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EMPLOYEEID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EMPLOYEEID })
+        </td>
+    </tr>
+}
+
+</table>

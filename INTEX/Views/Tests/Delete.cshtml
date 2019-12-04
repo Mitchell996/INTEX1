@@ -1,0 +1,80 @@
+﻿@model INTEX.Models.Test
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Test</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPLOYEEID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPLOYEEID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOURSTOCOMPLETE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOURSTOCOMPLETE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BASEPRICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BASEPRICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUMBEROFDAYS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMBEROFDAYS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TESTDESCRIPTION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TESTDESCRIPTION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROGRESS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROGRESS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TESTCONDITIONAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TESTCONDITIONAL)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

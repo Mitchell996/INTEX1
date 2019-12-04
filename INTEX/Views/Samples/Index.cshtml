@@ -1,0 +1,93 @@
+﻿@model IEnumerable<INTEX.Models.Sample>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ORDERID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RECEIVEDBY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COMPOUNDNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QUANTITY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATEARRIVED)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DUEDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.APPEARANCE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLIENTWEIGHT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOLARMASS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACTUALWEIGHT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MTD)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORDERID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RECEIVEDBY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COMPOUNDNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QUANTITY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATEARRIVED)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DUEDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.APPEARANCE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLIENTWEIGHT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOLARMASS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACTUALWEIGHT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MTD)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

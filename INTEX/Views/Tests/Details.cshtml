@@ -1,0 +1,74 @@
+﻿@model INTEX.Models.Test
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Test</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPLOYEEID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPLOYEEID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOURSTOCOMPLETE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOURSTOCOMPLETE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BASEPRICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BASEPRICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NUMBEROFDAYS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMBEROFDAYS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TESTDESCRIPTION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TESTDESCRIPTION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROGRESS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROGRESS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TESTCONDITIONAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TESTCONDITIONAL)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TESTID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

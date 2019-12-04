@@ -15,7 +15,6 @@ namespace INTEX.Models
         public int TESTMATERIALID { get; set; }
 
         [Required]
-        [Stringlength(6,minimumLength= 6)]
         [Display(Name = "Compound LT ID")]
         public int COMPOUNDLTID { get; set; }
         [Required]

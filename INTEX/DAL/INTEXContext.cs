@@ -9,7 +9,7 @@ namespace INTEX.DAL
 {
     public class INTEXContext : DbContext
     {
-        public INTEXContext() : base("INTEX")
+        public INTEXContext() : base("INTEXContext")
           {
           }
         public DbSet<Assay> Assay { get; set; }

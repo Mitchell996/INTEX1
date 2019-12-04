@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 
 namespace INTEX.Models
-{
+{   
     [Table("ORDER")]
     public class Order
     {
@@ -14,9 +14,13 @@ namespace INTEX.Models
 
         public int ORDERID { get; set; }
 
+        
         [Required(ErrorMessage = "Please select the Customer from the dropdown list")]
         [Display(Name = "Customer")]
         public int CUSTOMERID { get; set; }
+        [ForeignKey("CUSTOMERID")]
+        public virtual Customer Customer { get; set; }
+
 
         [Display(Name = "Comments (optional)")]
         public string ORDERCOMMENTS { get; set; }

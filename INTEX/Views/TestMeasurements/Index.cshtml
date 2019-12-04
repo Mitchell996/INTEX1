@@ -1,0 +1,51 @@
+﻿@model IEnumerable<INTEX.Models.TestMeasurement>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.COMPOUNDLTID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COMPOUNDSEQCODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CONCENTRATION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ASSAYID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.COMPOUNDLTID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COMPOUNDSEQCODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CONCENTRATION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ASSAYID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TESTMATERIALID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TESTMATERIALID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TESTMATERIALID })
+        </td>
+    </tr>
+}
+
+</table>

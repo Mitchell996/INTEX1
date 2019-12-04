@@ -1,0 +1,42 @@
+﻿@model INTEX.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPFIRSTNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPFIRSTNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPLASTNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPLASTNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOURLYWAGE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOURLYWAGE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EMPLOYEEID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

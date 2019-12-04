@@ -1,0 +1,69 @@
+﻿@model IEnumerable<INTEX.Models.Test>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EMPLOYEEID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HOURSTOCOMPLETE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BASEPRICE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NUMBEROFDAYS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TESTDESCRIPTION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PROGRESS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TESTCONDITIONAL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMPLOYEEID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOURSTOCOMPLETE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BASEPRICE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUMBEROFDAYS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TESTDESCRIPTION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PROGRESS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TESTCONDITIONAL)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TESTID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TESTID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TESTID })
+        </td>
+    </tr>
+}
+
+</table>

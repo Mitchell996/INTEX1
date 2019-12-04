@@ -1,0 +1,106 @@
+﻿@model INTEX.Models.Sample
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sample</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ORDERID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDERID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RECEIVEDBY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RECEIVEDBY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COMPOUNDNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMPOUNDNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QUANTITY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUANTITY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATEARRIVED)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATEARRIVED)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DUEDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DUEDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APPEARANCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APPEARANCE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLIENTWEIGHT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLIENTWEIGHT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOLARMASS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOLARMASS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACTUALWEIGHT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACTUALWEIGHT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MTD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MTD)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

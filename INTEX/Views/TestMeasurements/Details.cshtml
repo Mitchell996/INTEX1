@@ -1,0 +1,50 @@
+﻿@model INTEX.Models.TestMeasurement
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TestMeasurement</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.COMPOUNDLTID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMPOUNDLTID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COMPOUNDSEQCODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMPOUNDSEQCODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONCENTRATION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONCENTRATION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ASSAYID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ASSAYID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TESTMATERIALID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

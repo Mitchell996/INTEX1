@@ -1,0 +1,42 @@
+﻿@model INTEX.Models.ORDER
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ORDER</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CUSTOMERID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSTOMERID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORDERCOMMENTS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDERCOMMENTS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORDERPROGRESS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDERPROGRESS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ORDERID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<INTEX.Models.ORDER>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CUSTOMERID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORDERCOMMENTS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORDERPROGRESS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CUSTOMERID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORDERCOMMENTS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORDERPROGRESS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ORDERID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ORDERID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ORDERID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -12,7 +12,7 @@ namespace INTEX.Models
     {
         [Key]
         [Required]
-        private int CustomerID;
+        public int CustomerID { get; set; }
         [Required(ErrorMessage = "Please enter your Company name")]
         [Display(Name="Company Name")]
         public String CustName;
@@ -29,7 +29,7 @@ namespace INTEX.Models
         public String CustState { get; set; }
 
         [Required(ErrorMessage = "Please enter the email for your company contact")]
-        [Email(ErrorMessage="Please enter a valid Email Address")]
+        [EmailAddress(ErrorMessage="Please enter a valid Email Address")]
         [Display(Name = "Contact Email")]
         public String CustEmail { get; set; }
 
