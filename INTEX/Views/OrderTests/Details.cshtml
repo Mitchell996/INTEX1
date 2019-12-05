@@ -1,0 +1,42 @@
+﻿@model INTEX.Models.OrderTest
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrderTest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EMPFIRSTNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EMPFIRSTNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.ORDERCOMMENTS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.ORDERCOMMENTS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Test.TESTDESCRIPTION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test.TESTDESCRIPTION)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ORDERTESTID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

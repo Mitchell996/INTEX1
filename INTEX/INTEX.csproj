@@ -139,6 +139,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MaterialsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\OrderTestsController.cs" />
     <Compile Include="Controllers\SamplesController.cs" />
     <Compile Include="Controllers\TestMeasurementsController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
@@ -237,6 +238,14 @@
     <Content Include="Views\Samples\Details.cshtml" />
     <Content Include="Views\Samples\Edit.cshtml" />
     <Content Include="Views\Samples\Index.cshtml" />
+    <Content Include="Views\OrderTests\Create.cshtml" />
+    <Content Include="Views\OrderTests\Delete.cshtml" />
+    <Content Include="Views\OrderTests\Details.cshtml" />
+    <Content Include="Views\OrderTests\Edit.cshtml" />
+    <Content Include="Views\OrderTests\Index.cshtml" />
+    <Content Include="Views\OrderTests\AddtoOrder.cshtml" />
+    <Content Include="Views\OrderTests\ViewOrderTests.cshtml" />
+    <Content Include="Views\Home\ExportCSV.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
