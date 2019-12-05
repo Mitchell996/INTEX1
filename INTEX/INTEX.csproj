@@ -134,6 +134,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AssaysController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -239,6 +240,11 @@
     <Content Include="Views\OrderTests\AddtoOrder.cshtml" />
     <Content Include="Views\OrderTests\ViewOrderTests.cshtml" />
     <Content Include="Views\Home\ExportCSV.cshtml" />
+    <Content Include="Views\Assays\Create.cshtml" />
+    <Content Include="Views\Assays\Delete.cshtml" />
+    <Content Include="Views\Assays\Details.cshtml" />
+    <Content Include="Views\Assays\Edit.cshtml" />
+    <Content Include="Views\Assays\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
