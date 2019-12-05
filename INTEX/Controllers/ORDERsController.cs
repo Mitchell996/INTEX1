@@ -25,6 +25,7 @@ namespace INTEX.Controllers
         // GET: Orders/Details/5
         public ActionResult Details(int? id)
         {
+            TempData["ORDERID"] = id;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -34,7 +35,7 @@ namespace INTEX.Controllers
             {
                 return HttpNotFound();
             }
-            return View(order);
+            return RedirectToAction("ViewOrderTests", "OrderTests");
         }
 
         // GET: Orders/Create
@@ -129,5 +130,14 @@ namespace INTEX.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult AddTests(int? id)
+        { int newid = (int)id;
+            ViewBag.CurrentOrderID = newid;
+            TempData["ORDERID"] = newid;
+            // ViewBag.TESTID = new SelectList(db.Test, "TESTID", "TESTDESCRIPTION");
+            //ViewBag.ORDERID = new SelectList(newid, "ORDERID", "ORDERCOMMENTS");
+            return RedirectToAction( "AddToOrder", "OrderTests");
+        }
+
     }
 }

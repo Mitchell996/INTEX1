@@ -23,7 +23,7 @@ namespace INTEX.Models
         public int HOURSTOCOMPLETE { get; set; }
         [Required]
         [Display(Name = "Base Price")]
-        public double BASEPRICE { get; set; }
+        public decimal BASEPRICE { get; set; }
         [Required]
         [Display(Name = "Number Of Days")]
         public int NUMBEROFDAYS { get; set; }

@@ -1,0 +1,48 @@
+﻿@model INTEX.Models.OrderTest
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>OrderTest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EMPFIRSTNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EMPFIRSTNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.ORDERCOMMENTS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.ORDERCOMMENTS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Test.TESTDESCRIPTION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test.TESTDESCRIPTION)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

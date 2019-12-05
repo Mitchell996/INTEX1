@@ -10,12 +10,23 @@ namespace INTEX.Models
     [Table("ORDERTEST")]
     public class OrderTest
     {
+        public OrderTest()
+        {
+
+        }
+        public OrderTest(int testToAdd, int orderToAdd)
+        {
+            ORDERID = orderToAdd;
+            TESTID = testToAdd;
+            //EMPLOYEEID = null;
+        }
+
         [Key]
         public int ORDERTESTID { get; set; }
 
-        [Required(ErrorMessage = "Please select the Employee assigned to the test from the dropdown list")]
+        //[Required(ErrorMessage = "Please select the Employee assigned to the test from the dropdown list")]
         [Display(Name = "Employee Assigned")]
-        public int EMPLOYEEID { get; set; }
+        public int? EMPLOYEEID { get; set; }
         [ForeignKey("EMPLOYEEID")]
         public virtual  Employee Employee { get; set; }
 
