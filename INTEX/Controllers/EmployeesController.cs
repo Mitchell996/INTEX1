@@ -124,5 +124,40 @@ namespace INTEX.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult CalculatePrices(int OrderNumber)
+        {
+            //Material quantity used, Material price
+            var invoice =
+                db.Database.SqlQuery<InvoicePrint>(
+                    "Select Employee.EMPFIRSTNAME + ' ' + Employee.EMPLASTNAME AS 'EmployeeAssigned'" +
+                        "Employee.HOURLYWAGE AS EmployeeWage, " +
+                        //Test name, hours to complete, base price,
+                        "Test.TESTDESCRIPTION AS TestName, " +
+                        ".Test.HOURSTOCOMPLETE AS HoursRequired, " +
+                        "Test.BASEPRICE AS BasePrice, " +
+
+                        "TestMaterial.QUANTITYNEEDED AS MaterialQuantity , " +
+                        "Material.COST AS MaterialPrice " +
+                        "FROM Order, Employee, Test, TestMaterial, Material " +
+                        "WHERE Order.EMPLOYEEID =Employee.EMPLOYEEID AND " +
+                            "Test.ORDERID = Order.ORDERID AND" +
+                            "TestMaterial.TESTID = Test.TESTID" +
+                            "TestMaterial.MATERIALID = db.Material.MATERIALID AND" +
+                            "Order.ORDERID == " + OrderNumber + ";");
+
+            //if the invoice isn't already in the Invoice Database, add it.
+
+           // if (db.Invoice.Find(invoice.InvoiceID) is null)
+
+
+
+            return View(invoice);
+            // List<T> FinalPrices = new List<T>;
+            
+                      
+        }
     }
+
+    
 }
