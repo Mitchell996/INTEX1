@@ -12,9 +12,12 @@ namespace INTEX.DAL
         public INTEXContext() : base("INTEXContext")
           {
           }
+
+        //Overlying fake tables for each table - data is initially committed to these tables, and then saved to the database.
         public DbSet<Assay> Assay { get; set; }
         public DbSet<Customer> Customer { get; set; }
         public DbSet<Employee> Employee { get; set; }
+        public DbSet<Invoice> Invoice { get; set; }
         public DbSet<Materials> Material { get; set; }
         public DbSet<Order> Order { get; set; }
         public DbSet<OrderTest> OrderTest { get; set; }
