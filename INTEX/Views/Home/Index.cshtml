@@ -2,27 +2,33 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+
+<div class="jumbotron" style="background: rgba(73, 182, 231, 0.81);">
+    <h1 class="text-center ">Welcome to Northwest Labs</h1>
+    <p class="lead text-center  ">Please select your status below</p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Customers</h2>
+        <h2>New Customers</h2>
         <p>
             Simple views that the customer will be able to see
         </p>
+        
+            @Html.ActionLink("Create an Account", "Create", "Customers", new { @class = "btn btn-primary btn-large" })
+       
     </div>
     <div class="col-md-4">
-        <h2>Seattle</h2>
-        <p>Can view everything and print out reports</p>
-        <input type="button" value="get orders" onclick="location.href='@Url.Action("ExportCSV")'" />
+        <h2>Returning Customer</h2>
+        <p></p>
+            @Html.ActionLink("Sign In", "Create", "Login", new { @class = "btn btn-primary btn-large" })
+        
 
     </div>
     <div class="col-md-4">
-        <h2>Singapore</h2>
+        <h2>Employee</h2>
         <p>Complete access to everything</p>
+            @Html.ActionLink("Sign In", "Index", "Orders", new { @class = "btn btn-primary btn-large" })
+      
     </div>
 </div>

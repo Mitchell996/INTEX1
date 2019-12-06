@@ -10,9 +10,7 @@ namespace INTEX.Models
     [Table("Invoice")]
     public class Invoice
     {
-
-        public class Materials
-        {
+        
             [Key]
             public int INVOICEID { get; set; }
 
@@ -23,6 +21,6 @@ namespace INTEX.Models
             public double DISCOUNT { get; set; }
 
 
-        }
+       
     }
 }

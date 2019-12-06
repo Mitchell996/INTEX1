@@ -26,7 +26,7 @@ namespace INTEX.Models
         public string ORDERCOMMENTS { get; set; }
 
         [Required(ErrorMessage = "Please enter the number of tests completed / number of tests requested (i.e. 4/5)")]
-        [Display(Name = "Progress (Number of tests completed / Number of tests requested (i.e. 4/5))x")]
+        [Display(Name = "Progress (i.e. 4 tests completed/5 requested)")]
         public string ORDERPROGRESS { get; set; }
     }
 }

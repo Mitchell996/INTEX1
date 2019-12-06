@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+}
+<h2 class="text-center"> Manage </h2>
+<div class="row">
+        <div class="col-sm-4">
+            <div class="card " style="width: 18rem;">
+                <img class="card-img-top" src="~/Content/Images/Employees.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"> Employees</h5>
+                    <p class="card-text"></p>
+                    @Html.ActionLink("View All Employees", "Index", "Employees", new { @class = "btn btn-primary btn-large" })
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="~/Content/Images/Customers.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Customers</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    @Html.ActionLink("View All Orders", "Index", "Customers", new { @class = "btn btn-primary btn-large" })
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="~/Content/Images/Orders.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Orders</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    @Html.ActionLink("View All Customers", "Index", "Orders", new { @class = "btn btn-primary btn-large" })
+                </div>
+            </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="~/Content/Images/Tests.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Tests</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                @Html.ActionLink("View All Tests", "Index", "Tests", new { @class = "btn btn-primary btn-large" })
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="~/Content/Images/Assays.jpg"alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Assays</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                @Html.ActionLink("View All Assays", "Index", "Assays", new { @class = "btn btn-primary btn-large" })
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="~/Content/Images/Materials.jpeg"alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Materials</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                @Html.ActionLink("View All Materials", "Index", "Materials", new { @class = "btn btn-primary btn-large" })
+            </div>
+        </div>
+    </div>
+</div>
