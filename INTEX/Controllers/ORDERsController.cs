@@ -59,7 +59,7 @@ namespace INTEX.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CUSTOMERID = new SelectList(db.Customer, "CustomerID", "CustCity", order.CUSTOMERID);
+            ViewBag.CUSTOMERID = new SelectList(db.Customer, "CustomerID", "CustName", order.CUSTOMERID);
             return View(order);
         }
 
