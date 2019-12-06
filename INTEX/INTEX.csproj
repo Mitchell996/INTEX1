@@ -253,6 +253,7 @@
     <Content Include="Views\Assays\Details.cshtml" />
     <Content Include="Views\Assays\Edit.cshtml" />
     <Content Include="Views\Assays\Index.cshtml" />
+    <Content Include="Views\Assays\StoreFile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

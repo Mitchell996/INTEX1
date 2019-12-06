@@ -25,6 +25,6 @@ namespace INTEX.Models
         public virtual Test Test { get; set; }
         [Required]
         [Display(Name = "Quantity Needed")]
-        public double QUANTITYNEEDED { get; set; }
+        public decimal QUANTITYNEEDED { get; set; }
     }
 }

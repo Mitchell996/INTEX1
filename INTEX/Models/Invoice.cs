@@ -11,18 +11,17 @@ namespace INTEX.Models
     public class Invoice
     {
 
-        public class Materials
-        {
+        
             [Key]
             public int INVOICEID { get; set; }
-
+            [Required]
             public int ORDERID { get; set; }
-
+            [Required]
             public double TOTALPRICE { get; set; }
-
+            
             public double DISCOUNT { get; set; }
 
 
-        }
+        
     }
 }

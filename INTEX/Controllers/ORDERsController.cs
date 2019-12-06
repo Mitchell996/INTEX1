@@ -41,7 +41,7 @@ namespace INTEX.Controllers
         // GET: Orders/Create
         public ActionResult Create()
         {
-            ViewBag.CUSTOMERID = new SelectList(db.Customer, "CustomerID", "CustCity");
+            ViewBag.CUSTOMERID = new SelectList(db.Customer, "CustomerID", "CustName");
             return View();
         }
 

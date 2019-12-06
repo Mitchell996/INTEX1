@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -128,6 +129,39 @@ namespace INTEX.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        /*public ActionResult StoreFile()
+        {
+            return View();
+        }*/
+        public ActionResult StoreFile(int? id)
+        {
+
+            TempData["id"] = id;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult StoreFile(HttpPostedFileBase file)
+        {
+            string filePath = string.Empty;
+            if (file != null)
+            {
+                string path = Server.MapPath("~/Uploads/");
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                filePath = path + Path.GetFileName(file.FileName);
+                string extension = Path.GetExtension(file.FileName);
+                file.SaveAs(filePath);
+                int id = (int)TempData["id"];
+                Assay assay = db.Assay.Find(id);
+                assay.RESULT = filePath;
+                db.Entry(assay).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
         }
     }
 }

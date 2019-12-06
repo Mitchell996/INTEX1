@@ -35,9 +35,10 @@
             @Html.DisplayFor(modelItem => item.COMMENTS)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ASSAYID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ASSAYID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ASSAYID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ASSAYID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ASSAYID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ASSAYID }) |
+            @Html.ActionLink("StoreFile", "StoreFile", new { id = item.ASSAYID })
         </td>
     </tr>
 }
