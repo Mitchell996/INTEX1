@@ -30,6 +30,12 @@ namespace INTEX.Controllers
             return View();
         }
 
+        public ActionResult Admin()
+        {
+
+            return View();
+        }
+
         public ActionResult ExportCSV()
         {
             string constr = @"Data Source=DESKTOP-7TA3SMB\SQLEXPRESS;Initial Catalog=INTEXContext;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
